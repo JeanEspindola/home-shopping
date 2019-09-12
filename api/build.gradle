@@ -4,9 +4,18 @@ plugins {
 	id 'java'
 }
 
-group = 'com.hs'
+group = 'hs-api'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
+
+bootJar {
+    baseName = 'hs-api'
+    version =  '0.1.0'
+}
+
+apply plugin: 'application'
+
+mainClassName = 'com.hs.api.HomeShoppingApplication'
 
 configurations {
 	compileOnly {
