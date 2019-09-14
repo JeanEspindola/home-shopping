@@ -13,7 +13,7 @@ public class Category {
 	private @Id @GeneratedValue Long id;
 	private String name;
 
-	Category() {}
+	public Category() {}
 
 	public Category(String name) {
 		this.name = name;
