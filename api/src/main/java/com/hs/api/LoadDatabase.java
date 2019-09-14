@@ -13,12 +13,12 @@ import com.hs.api.repository.CategoryRepository;
 @Slf4j
 class LoadDatabase {
 
-  @Bean
-  CommandLineRunner initDatabase(CategoryRepository category) {
-    return args -> {      
-      log.info("Preloading " + category.save(new Category("Fashion")));
-      log.info("Preloading " + category.save(new Category("Living")));
-      log.info("Preloading " + category.save(new Category("Cosmetics")));
-    };
-  }
+	@Bean
+	CommandLineRunner initDatabase(CategoryRepository category) {
+		return args -> {      
+			log.info("Preloading " + category.save(new Category("Fashion")));
+			log.info("Preloading " + category.save(new Category("Living")));
+			log.info("Preloading " + category.save(new Category("Cosmetics")));
+		};
+	}
 }
