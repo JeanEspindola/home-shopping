@@ -10,28 +10,28 @@ import javax.persistence.Id;
 @Entity
 public class Category {
 
-  private @Id @GeneratedValue Long id;
-  private String name;
+	private @Id @GeneratedValue Long id;
+	private String name;
 
-  Category() {}
+	Category() {}
 
-  public Category(String name) {
-    this.name = name;
-  }
+	public Category(String name) {
+		this.name = name;
+	}
 
-  public String getName() {
-    return this.name;
-  }
+	public String getName() {
+		return this.name;
+	}
 
-  public void setName(String name) {
-    this.name = name;
-  }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-  public Long getId() {
-	return id;
-  }
+	public Long getId() {
+		return id;
+	}
 
-  public void setId(Long id) {
-    this.id = id;	
-  }
+	public void setId(Long id) {
+		this.id = id;	
+	}
 }
