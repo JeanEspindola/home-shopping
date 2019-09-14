@@ -11,11 +11,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class CategoryResourceAssembler implements ResourceAssembler<Category, Resource<Category>> {
 
-  @Override
-  public Resource<Category> toResource(Category category) {
+	@Override
+	public Resource<Category> toResource(Category category) {
 
-    return new Resource<>(category,
-      linkTo(methodOn(CategoryController.class).one(category.getId())).withSelfRel(),
-      linkTo(methodOn(CategoryController.class).all()).withRel("categories"));
-  }
+		return new Resource<>(category,
+				linkTo(methodOn(CategoryController.class).getSingleCategory(category.getId())).withSelfRel(),
+				linkTo(methodOn(CategoryController.class).getCategories()).withRel("categories"));
+	}
 }
