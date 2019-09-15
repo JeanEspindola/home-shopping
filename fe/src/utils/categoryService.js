@@ -7,7 +7,7 @@ class CategoryService {
   static async getCategoryResults() {
     return fetch(categoriesUrl)
       .then(response => response.json())
-      .then(json => json)
+      .then(json => json._embedded)
       .catch(error => error);
   }
 }

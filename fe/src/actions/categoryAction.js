@@ -7,7 +7,6 @@ export const categoriesFetchSuccess = categoryList => ({
 })
 
 export const loadCategoryList = () => async (dispatch) => {
-  console.log('test');
   try {
     const response = await categoryService.getCategoryResults();
     dispatch(categoriesFetchSuccess(response));
