@@ -1,8 +1,8 @@
 import categoryService from '../utils/categoryService';
-import { CATEGORIES_FETCH_SUCCESS } from '../utils/constants';
+import { CATEGORY_LIST_FETCH_SUCCESS } from '../utils/constants';
 
 export const categoriesFetchSuccess = categoryList => ({
-  type: CATEGORIES_FETCH_SUCCESS,
+  type: CATEGORY_LIST_FETCH_SUCCESS,
   categoryList,
 })
 
