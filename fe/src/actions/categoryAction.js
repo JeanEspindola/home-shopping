@@ -1,5 +1,12 @@
 import categoryService from '../utils/categoryService';
-import { CATEGORY_LIST_FETCH_SUCCESS, CATEGORY_SELECTED_SUCCESS } from '../utils/constants';
+import {
+   CATEGORY_LIST_FETCH_SUCCESS, CATEGORY_SELECTED_SUCCESS, CATEGORY_DELETE_SUCCESS,
+} from '../utils/constants';
+
+export const categoriesDeleteSuccess = categoryId => ({
+  type: CATEGORY_DELETE_SUCCESS,
+  categoryId,
+})
 
 export const categorySelectedSuccess = (categoryIdSelected, categoryTitle ) => ({
   type: CATEGORY_SELECTED_SUCCESS,
@@ -18,5 +25,14 @@ export const loadCategoryList = () => async (dispatch) => {
     dispatch(categoriesFetchSuccess(response.categoryList));
   } catch (error) {
     throw (error);
+  }
+}
+
+export const deleteCategory = (categoryId) => async (dispatch) => {
+  try {
+    const response = await categoryService.deleteCategory(categoryId);
+    dispatch(categoriesDeleteSuccess(categoryId));
+  } catch (error) {
+    console.log(error);
   }
 }

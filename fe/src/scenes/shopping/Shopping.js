@@ -4,7 +4,7 @@ import CategoryList from '../../components/categories/CategoryList/CategoryListC
 import ProductList from '../../components/products/ProductsList/ProductsListContainer';
 import './Shopping.scss';
 
-const Shopping = ({ categoryList }) => (
+const Shopping = () => (
   <Row className="shopping-page__container">
     <Col sm={4}>
       <CategoryList editMode={false} />
