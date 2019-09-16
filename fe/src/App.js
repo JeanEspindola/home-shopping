@@ -11,14 +11,14 @@ const App = () => (
     <Header title="Home Shopping Application" />
     <div className="app__navigation">
       <Router>
-        <Row>
+        <Row className="app__navigation__links">
           <Col sm={12}>
-            <Link to="/" className="app__navigation__router">Home</Link>
-            <Link to="/admin" className="app__navigation__router">Administration</Link>
-            <Link to="/shopping" className="app__navigation__router">Shopping</Link>
+            <Link to="/" className="app__navigation__links-margin">Home</Link>
+            <Link to="/admin" className="app__navigation__links-margin">Administration</Link>
+            <Link to="/shopping" className="app__navigation__links-margin">Shopping</Link>
           </Col>
         </Row>
-        <Row>
+        <Row className="app__navigation__routes">
           <Col sm={12}>
             <Route path="/admin" component={Admin} />
             <Route path="/shopping" component={Shopping} />

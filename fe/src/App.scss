@@ -6,8 +6,16 @@
   .app__navigation {
     font-size: 14px;
 
-    .app__navigation__router {
-      margin-left: 5px;
+    .app__navigation__links {
+      margin-top: 5px;
+
+      .app__navigation__links-margin {
+        margin-left: 5px;
+      }
+    }
+
+    .app__navigation__routes {
+      margin-top: 7px;
     }
   }
 }
