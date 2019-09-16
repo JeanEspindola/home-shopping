@@ -23,7 +23,7 @@ class CategoryItem extends Component {
       <div
         className="category-item__view"
         onClick={this.setCategorySelected}>
-          { name }  
+          {name}  
       </div>
     );
   }
