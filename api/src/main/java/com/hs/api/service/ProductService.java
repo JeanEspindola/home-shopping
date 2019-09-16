@@ -37,27 +37,13 @@ public class ProductService {
 	@Autowired
 	private ProductResourceAssembler assembler;
 
-//	ProductService(ProductRepository repository, ProductResourceAssembler assembler) {
-//		this.repository = repository;
-//		this.assembler = assembler;
-//	}
-
-	public Resources<Resource<Product>> getAllProducts() {
-		List<Resource<Product>> products = repository.findAll().stream()
-				.map(assembler::toResource)
-				.collect(Collectors.toList());
-
-		return new Resources<>(products,
-				linkTo(methodOn(ProductController.class).getProducts()).withSelfRel());
-	}
-
 	public Resources<Resource<Product>> getProductsByCategory(Long categoryId) {
 		List<Resource<Product>> products = repository.findProductsByCategoryId(categoryId).stream()
 				.map(assembler::toResource)
 				.collect(Collectors.toList());
 
 		return new Resources<>(products,
-				linkTo(methodOn(ProductController.class).getProducts()).withSelfRel());
+				linkTo(methodOn(ProductController.class).getProducts(categoryId)).withSelfRel());
 	}
 
 	public Resource<Product> getSingleProduct(@PathVariable Long id) {

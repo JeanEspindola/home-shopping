@@ -16,6 +16,6 @@ public class ProductResourceAssembler implements ResourceAssembler<Product, Reso
 
 		return new Resource<>(product,
 				linkTo(methodOn(ProductController.class).getProduct(product.getId())).withSelfRel(),
-				linkTo(methodOn(ProductController.class).getProducts()).withRel("products"));
+				linkTo(methodOn(ProductController.class).getProducts(product.getCategory().getId())).withRel("products"));
 	}
 }
