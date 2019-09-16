@@ -1,23 +1,29 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import CategoryItemView from './CategoryItem';
+import CategoryItem from './CategoryItemContainer';
 import { Row, Col } from 'react-bootstrap';
+import './CategoryList.scss';
 
 const CategoryList = ({ categoryList, editMode, onSelectCategory, onLoadProductList }) => (
-  <Row className="category-list__container">
-    <Col sm={12}>
+  <div className="category-list__container">
+    <Row className="category-list__title">
+      <Col sm={12}>
+        Categories:
+      </Col>
+    </Row>
+    <Fragment>
       {categoryList.map(item => (
-        <CategoryItemView
-         key={item.id}
-         categoryId={item.id}
-         name={item.name}
-         editMode={editMode}
-         onSelectCategory={onSelectCategory}
-         onLoadProductList={onLoadProductList}
+        <CategoryItem
+          key={item.id}
+          categoryId={item.id}
+          name={item.name}
+          editMode={editMode}
+          onSelectCategory={onSelectCategory}
+          onLoadProductList={onLoadProductList}
         />
       ))}
-    </Col>
-  </Row>
+    </Fragment>
+  </div>
 );
 
 CategoryList.propTypes = {
