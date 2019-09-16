@@ -1,8 +1,13 @@
 .app__container {
-  //text-align: center;
-  background-color: #adb9d3;
   min-height: 100vh;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+
+  .app__navigation {
+    font-size: 14px;
+
+    .app__navigation__router {
+      margin-left: 5px;
+    }
+  }
 }
