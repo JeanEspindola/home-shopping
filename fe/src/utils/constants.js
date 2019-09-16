@@ -1,6 +1,3 @@
-// export const API_KEY = 'de99f27226cb42b1993b11f717641745';
-// export const URL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
-
 export const API_BASE_URL = 'http://localhost:8080/';
 export const API_CATEGORIES = 'categories';
 export const API_PRODUCTS = 'products';
@@ -9,6 +6,7 @@ export const CATEGORY_LIST_FETCH_SUCCESS = 'CATEGORY_LIST_FETCH_SUCCESS';
 export const CATEGORY_CREATE_SUCCESS = 'CATEGORY_CREATE_SUCCESS';
 export const CATEGORY_DELETE_SUCCESS = 'CATEGORY_DELETE_SUCCESS';
 export const CATEGORY_UPDATE_FETCH_SUCCESS = 'CATEGORY_UPDATE_FETCH_SUCCESS';
+export const CATEGORY_SELECTED_SUCCESS = 'CATEGORY_SELECTED_SUCCESS';
 
 export const PRODUCTS_LIST_FETCH_SUCCESS = 'PRODUCTS_LIST_FETCH_SUCCESS';
 export const PRODUCT_CREATE_SUCCESS = 'PRODUCT_CREATE_SUCCESS';

@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import configureStore from './store/configureStore';
 import { loadCategoryList } from './actions/categoryAction';
-import { loadProductsList } from './actions/productAction';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -13,7 +12,6 @@ import * as serviceWorker from './serviceWorker';
 const store = configureStore();
 
 store.dispatch(loadCategoryList());
-store.dispatch(loadProductsList());
 
 ReactDOM.render(
   <BrowserRouter>
