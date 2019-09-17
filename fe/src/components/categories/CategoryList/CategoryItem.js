@@ -12,9 +12,21 @@ class CategoryItem extends Component {
     categoryId: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     editMode: PropTypes.bool.isRequired,
+    newEntry: PropTypes.bool.isRequired,
     onSelectCategory: PropTypes.func.isRequired,
     onLoadProductList: PropTypes.func.isRequired,
     onDeleteCategory: PropTypes.func.isRequired,
+    onUpdateCategory: PropTypes.func.isRequired,
+    onCreateCategory: PropTypes.func.isRequired,
+  }
+
+  constructor(props) {
+    super(props);
+
+    const { name } = this.props;
+    this.state = {
+      name,
+    };
   }
 
   setCategorySelected = () => {
@@ -23,21 +35,32 @@ class CategoryItem extends Component {
     onLoadProductList(categoryId);
   }
 
-  onChangeCategoryName = () => {
-
+  onChangeCategoryName = (event) => {
+    this.setState({ name: event.target.value });
   }
 
   onSaveCategoryItem = () => {
-    console.log('tetetetetet')
+    const { onUpdateCategory, categoryId, onCreateCategory, newEntry } = this.props;
+    const { name } = this.state;
+
+    const obj = {
+      name,
+    }
+    if (newEntry) {
+      onCreateCategory(categoryId, obj);
+    } else {
+      onUpdateCategory(categoryId, obj);
+    }
   }
 
   onDeleteCategoryItem = () => {
-    const { categoryId, onDeleteCategory } = this.props;
+    const { onDeleteCategory, categoryId } = this.props;
     onDeleteCategory(categoryId);
   }
 
   render() {
-    const { name, editMode } = this.props;
+    const { editMode } = this.props;
+    const { name } = this.state;
 
     return (
       <Fragment>
