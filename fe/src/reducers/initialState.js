@@ -2,5 +2,5 @@ export default {
   categoryList: [],
   productList: [],
   categoryTitle: '',
-  categoryIdSelected: null,
+  categoryIdSelected: 0,
 };
