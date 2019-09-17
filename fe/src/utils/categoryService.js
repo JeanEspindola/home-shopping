@@ -25,9 +25,8 @@ class CategoryService {
         if(!response.ok) {
           return Error(response.statusText);
         }
-        return response.json()
+        return response.json();
       })
-      .then(json => json)
       .catch(error => error);
   }
 
@@ -40,7 +39,6 @@ class CategoryService {
       body: JSON.stringify(objectParam),
     })
       .then(response => response.json())
-      .then(json => json)
       .catch(error => error);
   }
 
@@ -53,7 +51,6 @@ class CategoryService {
       body: JSON.stringify(objectParam),
     })
       .then(response => response.json())
-      .then(json => json)
       .catch(error => error);
   }
 }

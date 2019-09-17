@@ -43,6 +43,10 @@ class CategoryItem extends Component {
     const { onUpdateCategory, categoryId, onCreateCategory, newEntry } = this.props;
     const { name } = this.state;
 
+    if (name === ''){
+      return;
+    }
+
     const obj = {
       name,
     }

@@ -4,13 +4,13 @@ import { categorySelectedSuccess, categoryAddNewSuccess } from '../../../actions
 import { loadProductsList } from '../../../actions/productAction';
 
 const mapDispatchToProps = dispatch => ({
-    onSelectCategory: (categoryId, name) => dispatch(categorySelectedSuccess(categoryId, name)),
-    onLoadProductList: (categoryId) => dispatch(loadProductsList(categoryId)),
-    onAddNewCategory: () => dispatch(categoryAddNewSuccess()),
-  });
+  onSelectCategory: (categoryId, name) => dispatch(categorySelectedSuccess(categoryId, name)),
+  onLoadProductList: (categoryId) => dispatch(loadProductsList(categoryId)),
+  onAddNewCategory: () => dispatch(categoryAddNewSuccess()),
+});
 
 const mapStateToProps = state => ({
-    categoryList: state.categories.categoryList,
+  categoryList: state.categories.categoryList,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CategoryList);

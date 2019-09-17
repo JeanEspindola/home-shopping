@@ -19,24 +19,24 @@ function categories(state = initialState, action) {
         ...state,
         categoryIdSelected: action.categoryIdSelected,
         categoryTitle: action.categoryTitle,
-      }
+      };
     case CATEGORY_DELETE_SUCCESS:
       return {
         ...state,
         categoryList: removeObjectFromArray(state.categoryList, action.categoryId),
-        categoryIdSelected: null,
+        categoryIdSelected: 0,
         categoryTitle: '',
-      }
+      };
     case CATEGORY_UPDATE_SUCCESS:
       return {
         ...state,
         categoryList: updateCategoryItem(state.categoryList, action.category, action.categoryId),
-      }
+      };
     case CATEGORY_ADD_NEW_SUCCESS:
       return {
         ...state,
         categoryList: addNewCategoryObjectToList(state.categoryList),
-      }
+      };
     default:
       return state;
   }

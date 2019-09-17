@@ -16,7 +16,7 @@ const CategoryList = ({
     {editMode && (
       <Row>
         <Col sm={12}>
-          <Button onClick={onAddNewCategory}>Add Category</Button>
+          <Button onClick={onAddNewCategory}>Add New Category</Button>
         </Col>
       </Row>
     )}
