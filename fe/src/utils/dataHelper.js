@@ -30,3 +30,32 @@ export const addNewCategoryObjectToList = (list) => {
 export const enhanceListObjects = list => list.map((item) => {
   return { ...item, newEntry: false };
 });
+
+export const addNewProductObjectToList = (list) => {
+  const obj = {
+    id: list.length + Math.random(),
+    name: '',
+    price: 0,
+    currency: 'Euro',
+    newEntry: true,
+  }
+ 
+  return [...list, obj];
+};
+
+export const updateProductItem = (productList, product, id) => {
+  const index = productList.findIndex(item => item.id === id);
+
+  return [
+    ...productList.slice(0, index),
+    {
+      ...productList[index],
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      currency: product.currency,
+      newEntry: false,
+    },
+    ...productList.slice(index + 1),
+  ];
+};
