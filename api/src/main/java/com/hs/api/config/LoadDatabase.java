@@ -35,6 +35,10 @@ class LoadDatabase {
 		Category category3 = new Category();
 		category3.setName("Cosmetics");
 		categoryRepository.save(category3);
+
+		Category category4 = new Category();
+		category4.setName("Bathroom");
+		categoryRepository.save(category4);
 		
 		Product product1 = new Product();
 		product1.setName("Jeans");
