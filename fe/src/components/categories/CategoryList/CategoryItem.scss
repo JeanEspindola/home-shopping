@@ -1,21 +1,43 @@
 .category-item__view {
-  margin-top: 5px;
+  margin: 5px 0 5px 0;
+  cursor: pointer;
+  font-size: 15px;
+  height: 30px;
+  &:hover {
+    background-color: rgb(91, 178, 207);
+    color: white;
+  }
+
+  .category-item__text {
+    padding: 0;
+  }
 }
 
 .category-item__edit {
+  height: 40px;
+  background-color: white;
+  box-shadow: #212529 1px 1px 2px;
+  user-select: none;
+  font-size: 12px;
+  margin-bottom: 10px;
+  margin-left: 0;
 
-  .category-item__save-button {
-    font-size: 20px;
-    cursor: pointer;
-    color: green;
+  .align__middle {
     margin-top: 5px;
-  }
 
-  .category-item__delete-button {
-    font-size: 20px;
-    cursor: pointer;
-    color: gray;
-    margin-top: 5px;
-    margin-left: 2px;
+    .category-item__save-button {
+      font-size: 20px;
+      cursor: pointer;
+      color: green;
+      margin-top: 5px;
+    }
+  
+    .category-item__delete-button {
+      font-size: 20px;
+      cursor: pointer;
+      color: gray;
+      margin-top: 5px;
+      margin-left: 2px;
+    }
   }
 }

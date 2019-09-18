@@ -81,7 +81,7 @@ class ProductItem extends Component {
       <Fragment>
       {!editMode && (
         <Row className="product-item__view">
-          <Col sm={6}>          
+          <Col sm={6} className="product-item__text">          
             {name}  
           </Col>
           <Col sm={6}>
@@ -91,9 +91,9 @@ class ProductItem extends Component {
       )}
       {editMode && (
         <Row className="product-item__edit">
-          <Col sm={5}>
+          <Col sm={5} className="align__middle">
             <FormGroup>
-              <InputGroup>
+              <InputGroup size="sm">
                 <FormControl
                   type="text"
                   placeholder="Product Name"
@@ -104,9 +104,9 @@ class ProductItem extends Component {
               </InputGroup>
             </FormGroup>
           </Col>
-          <Col sm={3}>
+          <Col sm={3} className="align__middle">
             <FormGroup>
-              <InputGroup>
+              <InputGroup size="sm">
                 <FormControl
                   type="text"
                   placeholder="Price"
@@ -117,9 +117,9 @@ class ProductItem extends Component {
               </InputGroup>
             </FormGroup>
           </Col>
-          <Col sm={2}>
+          <Col sm={2} className="align__middle">
             <FormGroup>
-              <InputGroup>
+              <InputGroup size="sm">
                 <FormControl
                   type="text"
                   placeholder="Currency"
@@ -130,7 +130,7 @@ class ProductItem extends Component {
               </InputGroup>
             </FormGroup>
           </Col>
-          <Col sm={2}>
+          <Col sm={2} className="align__middle">
             <FontAwesomeIcon
               icon={faCheckSquare}
               className="product-item__save-button"

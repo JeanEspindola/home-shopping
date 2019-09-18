@@ -2,20 +2,21 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import ProductItem from './ProductItemContainer';
 import { Row, Col, Button } from 'react-bootstrap';
+import './ProductsList.scss';
 
 const ProductList = ({ productList, categoryTitle, editMode, onAddNewProduct, categoryId }) => {
   const title = categoryTitle !== '' ? `Showing products for: ${categoryTitle}` : '';
   return (
-    <div className="product-list__container">
-      <Row>
+    <div className="products-list__container">
+      <Row className="products-list__title">
         <Col sm={12}>
           {title}
         </Col>
       </Row>
       {editMode && categoryId !== 0 &&(
         <Row>
-          <Col sm={12}>
-            <Button onClick={onAddNewProduct}>Add New Product</Button>
+          <Col sm={12} className="products-list__add-new">
+            <Button size="sm" onClick={onAddNewProduct}>Add New Product</Button>
           </Col>
         </Row>
       )}

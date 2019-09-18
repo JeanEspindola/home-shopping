@@ -2,6 +2,7 @@
   min-height: 100vh;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  background-color: whitesmoke;
 
   .app__navigation {
     font-size: 14px;
@@ -15,7 +16,7 @@
     }
 
     .app__navigation__routes {
-      margin-top: 7px;
+      margin: 7px -10px 0 -10px;
     }
   }
 }

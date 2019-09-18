@@ -1,5 +1,13 @@
 .category-list__container {
   .category-list__title {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .category-list__add-new {
+    text-align: right;
+    padding: 0;
+    margin-bottom: 7px;
   }
 }

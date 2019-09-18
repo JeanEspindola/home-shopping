@@ -1,5 +1,28 @@
-.product-item__edit {
+.product-item__view{
+  margin: 5px 0 5px 0;
+  cursor: pointer;
+  font-size: 15px;
+  height: 30px;
+  &:hover {
+    background-color: rgb(91, 178, 207);
+    color: white;
+  }
 
+  .product-item__text {
+    padding: 0;
+  }
+}
+
+.product-item__edit {
+  height: 40px;
+  background-color: white;
+  box-shadow: #212529 1px 1px 2px;
+  user-select: none;
+  font-size: 12px;
+  margin: 0 0 10px 0;
+
+  .align__middle {
+    margin-top: 5px;
     .product-item__save-button {
       font-size: 20px;
       cursor: pointer;
@@ -15,3 +38,5 @@
       margin-left: 2px;
     }
   }
+  
+}

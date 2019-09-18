@@ -69,19 +69,17 @@ class CategoryItem extends Component {
     return (
       <Fragment>
         {!editMode && (
-          <Row
-            className="category-item__view"
-            onClick={this.setCategorySelected}>
-              <Col sm={12}>
-                {name}  
-              </Col>
+          <Row className="category-item__view" onClick={this.setCategorySelected}>
+            <Col sm={12} className="category-item__text">
+              {name}  
+            </Col>
           </Row>
         )}
         {editMode && (
           <Row className="category-item__edit">
-            <Col sm={10}>
+            <Col sm={10} className="align__middle">
               <FormGroup>
-                <InputGroup>
+                <InputGroup size="sm">
                   <FormControl
                     type="text"
                     placeholder="Category Name"
@@ -92,7 +90,7 @@ class CategoryItem extends Component {
                 </InputGroup>
               </FormGroup>
             </Col>
-            <Col sm={2}>
+            <Col sm={2} className="align__middle">
               <FontAwesomeIcon
                 icon={faCheckSquare}
                 className="category-item__save-button"
