@@ -4,6 +4,7 @@ import {
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { CURRENCY_SYMBOLS } from '../../../utils/constants';
 import PropTypes from 'prop-types';
 import './ProductItem.scss';
 
@@ -19,6 +20,7 @@ class ProductItem extends Component {
     onUpdateProduct: PropTypes.func.isRequired,
     onCreateProduct: PropTypes.func.isRequired,
     categoryId: PropTypes.number.isRequired,
+    currencyList: PropTypes.objectOf(PropTypes.any).isRequired,
   }
 
   constructor(props) {
@@ -74,8 +76,15 @@ class ProductItem extends Component {
 
   render() {
     const { name, price, currency } = this.state;
-    const { editMode } = this.props;
-    const value = `${price} ${currency}`;
+    const symbol = CURRENCY_SYMBOLS[currency] || currency;
+    const { editMode, currencyList } = this.props;
+    const originalValue = `${symbol}${price}`;
+    let convertedValue = originalValue;
+    const rate = currencyList[currency]
+
+    if (currency !== 'EUR' && rate !== undefined) {
+      convertedValue = `${CURRENCY_SYMBOLS['EUR']}${(price / rate).toFixed(2)}`;
+    }
 
     return (
       <Fragment>
@@ -84,8 +93,13 @@ class ProductItem extends Component {
           <Col sm={6} className="product-item__text">          
             {name}  
           </Col>
-          <Col sm={6}>
-            {value}
+          <Col sm={3}>
+            {convertedValue}
+          </Col>
+          <Col sm={3}>
+            {currency !== 'EUR' && (
+              <span>Original price: {originalValue}</span>
+            )}
           </Col>
         </Row>
       )}

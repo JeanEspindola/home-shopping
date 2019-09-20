@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import ProductItem from './ProductItemContainer';
 import { Row, Col, Button } from 'react-bootstrap';
+import { SUPPORTED_CURRENCIES } from '../../../utils/constants';
 import './ProductsList.scss';
 
 const ProductList = ({ productList, categoryTitle, editMode, onAddNewProduct, categoryId }) => {
@@ -17,6 +18,7 @@ const ProductList = ({ productList, categoryTitle, editMode, onAddNewProduct, ca
         <Row>
           <Col sm={12} className="products-list__add-new">
             <Button size="sm" onClick={onAddNewProduct}>Add New Product</Button>
+            <span className="products-list__currencies">Supported Currencies: {SUPPORTED_CURRENCIES}</span>
           </Col>
         </Row>
       )}

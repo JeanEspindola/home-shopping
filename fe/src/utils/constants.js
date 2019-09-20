@@ -1,3 +1,15 @@
+export const EXCHANGE_URL = 'http://data.fixer.io/api/latest';
+export const ACCESS_KEY = 'a02866acf655981456a52f9f1f94e4da';
+export const SUPPORTED_CURRENCIES = 'EUR,USD,BRL,CAD,GBP,JPY';
+export const CURRENCY_SYMBOLS = {
+    USD: 'US$',
+    BRL: 'R$',
+    CAD: '$',
+    GBP: '£',
+    JPY: '¥',
+    EUR: '€',
+};
+
 export const API_BASE_URL = 'http://localhost:8080/';
 export const API_CATEGORIES = 'categories';
 export const API_PRODUCTS = 'products';
@@ -16,3 +28,5 @@ export const PRODUCT_DELETE_SUCCESS = 'PRODUCT_DELETE_SUCCESS';
 export const PRODUCT_UPDATE_SUCCESS = 'PRODUCT_UPDATE_SUCCESS';
 export const PRODUCT_CREATE_SUCCESS = 'PRODUCT_CREATE_SUCCESS';
 export const PRODUCT_ADD_NEW_SUCCESS = 'PRODUCT_ADD_NEW_SUCCESS';
+
+export const CURRENCY_LIST_FETCH_SUCCESS = 'CURRENCY_LIST_FETCH_SUCCESS';

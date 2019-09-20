@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import configureStore from './store/configureStore';
 import { loadCategoryList } from './actions/categoryAction';
+import { loadCurrencyList } from './actions/currencyAction';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -12,6 +13,7 @@ import * as serviceWorker from './serviceWorker';
 const store = configureStore();
 
 store.dispatch(loadCategoryList());
+store.dispatch(loadCurrencyList());
 
 ReactDOM.render(
   <BrowserRouter>

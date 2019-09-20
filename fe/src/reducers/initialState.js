@@ -3,4 +3,5 @@ export default {
   productList: [],
   categoryTitle: '',
   categoryIdSelected: 0,
+  currencyList: [],
 };

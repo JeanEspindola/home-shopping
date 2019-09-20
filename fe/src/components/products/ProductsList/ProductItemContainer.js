@@ -8,4 +8,8 @@ const mapDispatchToProps = dispatch => ({
   onCreateProduct: (productId, object)  => dispatch(createProduct(productId, object)),
 });
 
-export default connect(null, mapDispatchToProps)(ProductItem);
+const mapStateToProps = state => ({
+  currencyList: state.currency.currencyList,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductItem);

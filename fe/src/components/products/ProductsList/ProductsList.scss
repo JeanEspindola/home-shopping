@@ -7,5 +7,9 @@
   
     .products-list__add-new {
       margin-bottom: 7px;
+
+      .products-list__currencies {
+        float: right;
+      }
     }
   }
